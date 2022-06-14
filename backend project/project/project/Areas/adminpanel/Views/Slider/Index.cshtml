@@ -1,0 +1,74 @@
+﻿@model HomeVM
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="col-lg-12 grid-margin stretch-card">
+
+    <div class="table-responsive pt-5">
+        <a class="btn btn-danger" asp-controller="Slider" asp-action="Create"> Create Slider</a>
+        <table class="table table-dark mt-2">
+            <thead>
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Titles
+                    </th>
+                    <th>
+                        Subtitle
+                    </th>
+                    <th>
+                        More
+                    </th>
+                    <th>
+                        Setting
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Slider item in Model.sliders)
+                {
+                    <tr>
+                        <td>
+                            @item.Id
+                        </td>
+                        <td>
+                            <img src="~/assets/images/@item.Image" style="width:70px; height:50px;">
+                        </td>
+                        <td>
+                            @item.Title
+                        </td>
+                        <td>
+                            @item.Titles
+                        </td>
+                        <td>
+                            @if (@item.SubTitle.Length >= 30)
+                            {
+                                @(item.SubTitle.Substring(0,30).ToString() +"...")
+                                ;
+                            }
+                        </td>
+                        <td>
+                            @item.More
+                        </td>
+                        <td>
+                            <div class="d-flex">
+                                <a class="btn btn-primary" asp-controller="Slider" asp-action="Detiel" asp-route-Id="@item.Id">Detiel</a>
+                                <a class="btn btn-warning" asp-controller="Slider" asp-action="Edit" asp-route-Id="@item.Id">Edit</a>
+                                <a class="btn btn-danger" asp-controller="Slider" asp-action="Delete" asp-route-Id="@item.Id">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

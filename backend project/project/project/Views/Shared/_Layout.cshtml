@@ -1,0 +1,199 @@
+﻿@inject project.services.LoyautServices loyautservices
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="~/assets/Bootstrap/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="~/assets/Bootstrap/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="~/assets/images/logo.png">
+    <link rel="stylesheet" href="~/assets/scss/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/assets/scss/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/assets/scss/style.css">
+
+    <title>Eterna Bootstrap</title>
+</head>
+
+<body>
+    <header>
+        <section class="contactnumber">
+            <div class="container">
+                <div class="row">
+                    <div class="contact col-lg-6 mt-2">
+                        <div class="mail">
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="http://mail.google.com" class="a">@loyautservices.GetData().Result.FirstOrDefault(d => d.Key == "Email").Value</a>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-mobile-button "></i>
+                            <span>@loyautservices.GetData().Result.FirstOrDefault(d => d.Key == "Phone").Value</span>
+                        </div>
+                    </div>
+                    <div class="socialmedia col-lg-6 mt-2">
+                        <a href="http://www.Twitter.com" class="i"><i class="@loyautservices.GetData().Result.FirstOrDefault(d=>d.Key == "Twitter").Value"></i></a>
+                        <a href="http://www.Facebook.com" class="i"><i class="@loyautservices.GetData().Result.FirstOrDefault(d=>d.Key == "Facebook").Value"></i></a>
+                        <a href="http://www.Instagram.com" class="i"><i class="@loyautservices.GetData().Result.FirstOrDefault(d=>d.Key == "Instagram").Value"></i></a>
+                        <a href="http://www.Linkedin.com" class="i"><i class="@loyautservices.GetData().Result.FirstOrDefault(d=>d.Key == "Linkedin").Value"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light nav ">
+            <!-- Container wrapper -->
+            <div class="caption">
+                <div class="icon mt-2">
+                </div>
+                <strong>ETERNA</strong>
+            </div>
+            <div class=" col-lg-6 " style="margin-left: 22%;">
+                <div class="collapse navbar-collapse" id="navbarRightAlignExample">
+                    <!-- Left links -->
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Hom" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Index">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Blog</a>
+                        </li>
+                        <!-- Navbar dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                Drop Down
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Dropdown1</a></li>
+                                <li><a class="dropdown-item" href="#">Dropdown2</a></li>
+                                <li><a class="dropdown-item" href="#">Dropdown3</a></li>
+                                <li><a class="dropdown-item" href="#">Dropdown4</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item" style="list-style: none;">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                    <!-- Left links -->
+                </div>
+                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                        data-mdb-target="#navbarRightAlignExample" aria-controls="navbarRightAlignExample"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Collapsible wrapper -->
+            </div>
+            <!-- Container wrapper -->
+        </nav>
+    </header>
+    @RenderBody()
+    <footer>
+        <section class="section1 mt-5">
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-lg-6 title">
+                        <strong>Our Newsletter</strong>
+                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+                    </div>
+                    <div class="col-lg-6 search">
+                        <form action method="post">
+                            <input type="email" name="email" class="input1">
+                            <input type="submit" name="Subscribe" class="input2">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section2">
+            <div class="container mt-5">
+                <div class="row footerli">
+                    <div class="col-lg-3">
+                        <strong>USEFUL LINKS</strong>
+                        <ul>
+                            <li><i class="fa-solid fa-angle-right"></i>  Home</li>
+                            <li><i class="fa-solid fa-angle-right"></i>  About us</li>
+                            <li><i class="fa-solid fa-angle-right"></i>  Services</li>
+                            <li><i class="fa-solid fa-angle-right"></i>  Terms of service</li>
+                            <li><i class="fa-solid fa-angle-right"></i>  Privacy policy</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3">
+                        <strong>OUR SERVICES</strong>
+                        <lu style="list-style: none;">
+                            <li><i class="fa-solid i fa-angle-right"></i>  Web Design</li>
+                            <li><i class="fa-solid i fa-angle-right"></i>  Web Development</li>
+                            <li><i class="fa-solid i fa-angle-right"></i>  Product Management</li>
+                            <li><i class="fa-solid i fa-angle-right"></i>  Marketing</li>
+                            <li><i class="fa-solid i fa-angle-right"></i>  Graphic Design</li>
+                        </lu>
+                    </div>
+                    <div class="col-lg-3">
+                        <strong>CONTACT US</strong>
+                        <p>
+                            A108 Adam Street
+                            New York, NY 535022
+                            United States
+                        </p>
+                        <lu style="list-style: none;">
+                            <li>Phone: +1 5589 55488 55</li>
+                            <li>Email: info@example.com</li>
+                        </lu>
+                    </div>
+                    <div class="col-lg-3">
+                        <strong>About Eterna</strong>
+                        <p>
+                            Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita
+                            valies darta donna mare fermentum iaculis eu non diam phasellus.
+                        </p>
+                        <ul style="display: flex; gap: 20px;" class="icon">
+                            <li><a href="http://www.Twitter.com"><i class="@loyautservices.GetData().Result.FirstOrDefault(d=>d.Key == "Twitter").Value"></i></a></li>
+                            <li><a href="http://www.Facebook.com"><i class="@loyautservices.GetData().Result.FirstOrDefault(d=>d.Key == "Facebook").Value"></i></a></li>
+                            <li><a href="http://www.Instagram.com"><i class="@loyautservices.GetData().Result.FirstOrDefault(d=>d.Key == "Instagram").Value"></i></a></li>
+                            <li><a href="http://www.Skype.com"><i class="@loyautservices.GetData().Result.FirstOrDefault(d=>d.Key == "Skype").Value"></i></a></li>
+                            <li><a href="http://www.Linkedin.com"><i class="@loyautservices.GetData().Result.FirstOrDefault(d=>d.Key == "Linkedin").Value"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section3">
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-lg-12" style="text-align: center; color: white; line-height: 20px;">
+                        <p>© Copyright Eterna. All Rights Reserved</p>
+                        <p> Designed by <span><a href="#" style="text-decoration: none; color:#e96b56;">BootstrapMade</a></span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+    <a href="#" class="scrolicon active"><i class="fa-solid fa-up-long"></i></a>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="~/assets/js/owl.carousel.min.js"></script>
+    <script src="~/assets/js/home.js"></script>
+</body>
+
+</html>
